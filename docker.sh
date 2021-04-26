@@ -1,6 +1,7 @@
 #!/bin/bash
 set -x
 
+## Recuerda: debes lanzar docker compose desde el directorio donde tengas docker-compose.yml
 # Actualizamos 
 apt update
 
