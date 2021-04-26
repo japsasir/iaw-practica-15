@@ -5,9 +5,8 @@ version: '3.4'
 
 # Cada servicio requiere un contenedor
 services:
-
-    # Servicio Phpmyadmin
-    phpmyadmin:
+ # Servicio Phpmyadmin
+  phpmyadmin:
     # Imagen Docker
     image: phpmyadmin
     # Entorno empleado. Ver anexo al final del documento.
@@ -27,7 +26,7 @@ services:
     restart: always
 
     # Servicio MySQL
-    mysql:
+  mysql:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     ports:
@@ -44,7 +43,7 @@ services:
     restart: always
 
     # Servicio Wordpress
-    wordpress:
+  wordpress:
     image: wordpress
     ports:
         - "80:80"
