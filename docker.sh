@@ -2,16 +2,18 @@
 set -x
 
 # Actualizamos 
- apt update -y
+apt update
 
 # Instalamos docker y docker-compose
- apt install docker -y
- apt install docker-compose
+apt install docker docker-compose -y
 
 # Habilitamos docker y arrancamos el servicio
- systemctl enable docker
- systemctl start docker
+systemctl enable docker
+systemctl start docker
 
-# Lanzamos las diferentes imagenes. Es necesario usar '-d' para que no se abra la terminal.
+# Lanzamos los servicios de docker-compose yml. Es necesario usar '-d' para que no se abra la terminal.
+docker-compose up -d
 
-docker run -d
+## Para finalizar docker-compose ##
+#docker-compose down -v 
+#con -v elimina los volúmenes a la vez, útil para prácticas.
