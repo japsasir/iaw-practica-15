@@ -1,0 +1,62 @@
+# Cogemos la plantilla básica de docker-compose.yml.
+# Para otras practicas, docker-compose.env guardará las variables de entorno.
+# La versión puede ser necesaria para compatibilidad
+version: '3.4'
+
+# Cada servicio requiere un contenedor
+services:
+
+#Servicio Phpmyadmin
+phpmyadmin:
+    #Imagen Docker
+    image:: 
+    #Puertos abiertos
+    ports:
+      - "5000:5000"
+    #Directorios disponibles
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+    links:
+      - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
+
+#Servicio MySQL
+  mysql:
+    image:: 
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+    links:
+      - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
+
+#Servicio Wordpress
+wordpress:
+    image:: 
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code
+      - logvolume01:/var/log
+    links:
+      - redis
+  redis:
+    image: redis
+volumes:
+  logvolume01: {}
+
+# Definimos las dos redes necesarias. Ojo con la indentación
+networks:
+    frontend-network:
+    backend-network:
+
+# Sección reservada.
