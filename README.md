@@ -59,7 +59,8 @@ Deberá indicar el orden en el que se deben iniciar los servicios con la opción
 **Archivos en el repositorio**
 ------------
 1. **README.md** Documentación.
-
+2. **docker.sh** Ejecutable para instalar docker y docker-compose
+3. **docker-compose.yml* Archivo de referencia para docker-compose
 
 **Referencias**
 ------------
